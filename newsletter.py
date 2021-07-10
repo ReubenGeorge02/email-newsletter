@@ -2,8 +2,10 @@ import smtplib, ssl
 from string import Template
 from email.mime.text import MIMEText
 
-my_address = 'ta9980842@gmail.com'
-password = 'Bluetooth@02'
+sender_mail = open('sender_credentials.txt', mode='r')
+sender = sender_mail.read()
+my_address = sender.split()[0]
+password = sender.split()[1]
 
 def get_template(filename):
     template_file = open(filename, mode='r', encoding='utf-8')
