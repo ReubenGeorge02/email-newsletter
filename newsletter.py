@@ -2,11 +2,12 @@ import smtplib
 import ssl
 from string import Template
 from email.mime.text import MIMEText
+from dotenv import dotenv_values
 
-sender_mail = open("sender_credentials.txt", mode="r")
-sender = sender_mail.read()
-my_address = sender.split()[0]
-password = sender.split()[1]
+config = dotenv_values(".env")
+
+my_address = config["EMAIL"]
+password = config["PASSWORD"]
 
 
 def get_template(filename):
