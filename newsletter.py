@@ -59,4 +59,5 @@ for i in range(len(names)):
     if(attachment):
         msg.attach(p)
     s.sendmail(my_address, emails[i], msg.as_string())
+print("Emails sent!")
 s.quit()
